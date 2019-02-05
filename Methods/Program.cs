@@ -9,17 +9,29 @@
         #region Non-Recursive Without Argument
 
         //======================Non-Recursive Without Argument======================
+        /// <summary>
+        /// Start Method
+        /// </summary>
         static void Stars()
         {
             System.Console.WriteLine("**********");
             System.Console.WriteLine();
         }
 
+        /// <summary>
+        /// Dollar Method
+        /// </summary>
+
         static void Dollars()
         {
             System.Console.WriteLine("$$$$$$");
             System.Console.WriteLine();
         }
+
+        /// <summary>
+        /// Show Stars Method
+        /// </summary>
+        /// <param name="x">Argument</param>
 
         static void Showstars(int x)
         {
@@ -36,6 +48,11 @@
         #region Non-Recursive With Argument
 
         //============================Non-Recursive With Argument==================================================================
+
+        /// <summary>
+        /// Pyramid Star Land Method
+        /// </summary>
+        /// <param name="x">Argument</param>
 
         static void Pyramidstarland(int x)
         {
@@ -67,6 +84,11 @@
             }
 
         }
+
+        /// <summary>
+        /// Pyramid Star Port Method
+        /// </summary>
+        /// <param name="x">Argument</param>
 
         static void pyramidstarport(int x)
         {
@@ -114,6 +136,10 @@
         #region Recursive Without Argument
         //============================Recursive Without Argument=============================
 
+        /// <summary>
+        /// Sum Method
+        /// </summary>
+        /// <returns>Result</returns>
         static int sum()
         {
 
@@ -122,6 +148,10 @@
             return Result;
         }
 
+        /// <summary>
+        /// Power Method
+        /// </summary>
+        /// <returns>ResultPow</returns>
         static int pow()
         {
             int ResultPow = 1;
@@ -187,7 +217,7 @@
 
         static void Main(string[] args)
         {
-            int selectmetInt,  numberInt;
+            int selectmetInt, numberInt;
             string numbermetString, numberargString, selectnumberString;
 
             System.Console.WriteLine("  -----------------------------------------------------------------------");
@@ -355,9 +385,9 @@
                         else
                         {
                             System.Console.Clear();
-                            
+
                             System.Console.WriteLine
-                                ("Please select between the items specified.");                            
+                                ("Please select between the items specified.");
                         }
 
                     } while (true);
@@ -402,7 +432,7 @@
 
                             do
                             {
-                                
+
                                 System.Console.Write
                                     ("Please select the sample. Squarte[1] - Factorial[2] - Quit[Q or q]: ");
 
@@ -410,10 +440,10 @@
 
                                 System.Console.WriteLine();
 
-                                if (numberargString=="1")
+                                if (numberargString == "1")
                                 {
                                     System.Console.Clear();
-                                    
+
                                     System.Console.WriteLine
                                         ("         ----------------Show Squarte Of Number----------------");
 
@@ -421,15 +451,15 @@
 
                                     System.Console.Write
                                         ("Pleaes enter number for SQUARTE: ");
-                                    numberInt =int.Parse( System.Console.ReadLine());
+                                    numberInt = int.Parse(System.Console.ReadLine());
 
                                     System.Console.WriteLine();
 
                                     System.Console.WriteLine
-                                        ("Squarte this number is: "+squarte(numberInt));
+                                        ("Squarte this number is: " + squarte(numberInt));
                                 }
 
-                                else if (numberargString=="2")
+                                else if (numberargString == "2")
                                 {
                                     System.Console.Clear();
 
@@ -448,7 +478,7 @@
                                         ("Factorial this number is: " + factorial(numberInt));
                                 }
 
-                                else if (numberargString=="Q"||numberargString=="q")
+                                else if (numberargString == "Q" || numberargString == "q")
                                 {
                                     break;
                                 }
@@ -459,7 +489,7 @@
                                     System.Console.WriteLine
                                         ("Please select between the items specified.");
                                 }
-                                
+
                             } while (true);
 
                         }
@@ -497,7 +527,7 @@
                             System.Console.Clear();
 
                             System.Console.WriteLine
-                                ("Please select between the items specified. ");                            
+                                ("Please select between the items specified. ");
                         }
 
                     } while (true);
