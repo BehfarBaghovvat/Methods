@@ -2,22 +2,26 @@
 {
     class Program
     {
+
+        #region Non-Recursive
         //Method Non-Recursive
 
-        //============================Non-Recursive Without Argument==================================================================
-        static void stars()
+        #region Non-Recursive Without Argument
+
+        //======================Non-Recursive Without Argument======================
+        static void Stars()
         {
             System.Console.WriteLine("**********");
             System.Console.WriteLine();
         }
 
-        static void dollars()
+        static void Dollars()
         {
             System.Console.WriteLine("$$$$$$");
             System.Console.WriteLine();
         }
 
-        static void showstars(int x)
+        static void Showstars(int x)
         {
             for (int i = 0; i < x; i++)
             {
@@ -27,9 +31,13 @@
             }
         }
 
+        #endregion /Non-Recursive Without Argument
+
+        #region Non-Recursive With Argument
+
         //============================Non-Recursive With Argument==================================================================
 
-        static void pyramidstarland(int x)
+        static void Pyramidstarland(int x)
         {
 
             for (int i1 = 1; i1 <= x; i1++)
@@ -95,11 +103,17 @@
             }
         }
 
-        //========================================================================================================================
+        #endregion /Non-Recursive With Argument
+
+        #endregion /Non-Recursive
+
+        #region Recursive
 
         //Mothod Recursive
 
-        //============================Recursive Without Argument==================================================================
+        #region Recursive Without Argument
+        //============================Recursive Without Argument=============================
+
         static int sum()
         {
 
@@ -120,28 +134,30 @@
             return ResultPow;
         }
 
+        #endregion /Recursive Without Argument
 
-        //======================================Recursive With Argument==================================================================
+        #region Recursive With Argument
+        //==============================Recursive With Argument=========================
+
         static double squarte(int Number)
         {
-            double ResultSqurte=0;
+            double ResultSqurte = 0;
             int Power, Index;
 
             for (int i = 1; i <= Number; i++)
             {
                 Power = i * i;
 
-                if (Power>Number)
+                if (Power > Number)
                 {
                     Index = i;
                     Power = (i - 1) * (i - 1);
 
                     ResultSqurte = Index + (Number - Power) / (2 * Index);
-                    break;                  
-
+                    break;
                 }
 
-                else if(Power==Number)
+                else if (Power == Number)
                 {
                     Index = i;
                     Power = i * i;
@@ -150,8 +166,8 @@
                     break;
                 }
             }
-            
-            return ResultSqurte;            
+
+            return ResultSqurte;
         }
 
         static int factorial(int Number)
@@ -162,19 +178,17 @@
             {
                 ResultFact = ResultFact * i;
             }
-
             return ResultFact;
         }
 
+        #endregion /Recursive With Argument
 
-
-        //========================================================================================================================
+        #endregion /Recursive
 
         static void Main(string[] args)
         {
-            int SelectMet, SelectArg, Number;
-
-            string NumberMet, NumberArg, SelectNumber;
+            int selectmetInt,  numberInt;
+            string numbermetString, numberargString, selectnumberString;
 
             System.Console.WriteLine("  -----------------------------------------------------------------------");
             System.Console.WriteLine(" |-------------------------------Welcome---------------------------------|");
@@ -193,16 +207,16 @@
                 System.Console.Write
                     ("Please select method [1-2]: ");
 
-                NumberMet = System.Console.ReadLine();
+                numbermetString = System.Console.ReadLine();
 
                 System.Console.WriteLine();
 
-                if (NumberMet == "1")
+                if (numbermetString == "1")
                 {
 
                     System.Console.Clear();
 
-                    SelectMet = int.Parse(NumberMet);
+                    selectmetInt = int.Parse(numbermetString);
 
                     System.Console.WriteLine();
 
@@ -217,18 +231,19 @@
                         System.Console.Write
                                     ("Non-Recursice with argument[1], Non-Recursive without argument[2], For exit type[Q or q]: ");
 
-                        NumberArg = System.Console.ReadLine();
+                        numberargString = System.Console.ReadLine();
 
                         System.Console.WriteLine();
 
-                        if (NumberArg == "1")
+                        if (numberargString == "1")
                         {
 
                             System.Console.Clear();
 
                             System.Console.WriteLine();
 
-                            System.Console.WriteLine("-------------Non-Recursive With Argument-------------");
+                            System.Console.WriteLine
+                                ("-------------Non-Recursive With Argument-------------");
 
                             System.Console.WriteLine();
 
@@ -246,27 +261,29 @@
                                 System.Console.Write
                                     ("Please specify the type of pyramid, Landscape[1] - Portrait[2] - Show Stars[3]: ");
 
-                                SelectNumber = System.Console.ReadLine();
+                                selectnumberString = System.Console.ReadLine();
 
                                 System.Console.WriteLine();
                                 System.Console.WriteLine();
 
-                                if (SelectNumber == "1")
+                                if (selectnumberString == "1")
                                 {
-                                    System.Console.Write("Please enter a value: ");
+                                    System.Console.Write
+                                        ("Please enter a value: ");
 
                                     ShowResult = int.Parse(System.Console.ReadLine());
 
                                     System.Console.WriteLine();
                                     System.Console.WriteLine();
 
-                                    pyramidstarland(ShowResult);
+                                    Pyramidstarland(ShowResult);
                                 }
 
-                                else if (SelectNumber == "2")
+                                else if (selectnumberString == "2")
                                 {
 
-                                    System.Console.Write("Please enter a value: ");
+                                    System.Console.Write
+                                        ("Please enter a value: ");
 
                                     ShowResult = int.Parse(System.Console.ReadLine());
 
@@ -276,20 +293,21 @@
                                     pyramidstarport(ShowResult);
                                 }
 
-                                else if (SelectNumber == "3")
+                                else if (selectnumberString == "3")
                                 {
 
-                                    System.Console.Write("Please enter a value: ");
+                                    System.Console.Write
+                                        ("Please enter a value: ");
 
                                     ShowResult = int.Parse(System.Console.ReadLine());
 
                                     System.Console.WriteLine();
                                     System.Console.WriteLine();
 
-                                    showstars(ShowResult);
+                                    Showstars(ShowResult);
                                 }
 
-                                else if (SelectNumber == "Q" || SelectNumber == "q")
+                                else if (selectnumberString == "Q" || selectnumberString == "q")
                                 {
 
                                     break;
@@ -298,7 +316,8 @@
 
                                 else
                                 {
-                                    System.Console.Write("Please select between the items specified.");
+                                    System.Console.Write
+                                        ("Please select between the items specified.");
                                     System.Console.Clear();
                                 }
                             } while (true);
@@ -307,27 +326,28 @@
                             System.Console.WriteLine();
 
                         }
-                        else if (NumberArg == "2")
+                        else if (numberargString == "2")
                         {
                             System.Console.Clear();
 
                             System.Console.WriteLine();
 
-                            System.Console.WriteLine("-------------Non-Recursive Without Argument-------------");
+                            System.Console.WriteLine
+                                ("-------------Non-Recursive Without Argument-------------");
 
                             System.Console.WriteLine();
 
-                            stars();
+                            Stars();
 
                             System.Console.WriteLine();
 
-                            dollars();
+                            Dollars();
 
                             System.Console.WriteLine();
 
                         }
 
-                        else if (NumberArg == "Q" || NumberArg == "q")
+                        else if (numberargString == "Q" || numberargString == "q")
                         {
                             break;
                         }
@@ -336,20 +356,21 @@
                         {
                             System.Console.Clear();
                             
-                            System.Console.WriteLine("Please select between the items specified.");                            
+                            System.Console.WriteLine
+                                ("Please select between the items specified.");                            
                         }
 
                     } while (true);
                 }
 
-                else if (NumberMet == "2")
+                else if (numbermetString == "2")
                 {
 
                     System.Console.Clear();
 
                     System.Console.WriteLine();
 
-                    SelectMet = int.Parse(NumberMet);
+                    selectmetInt = int.Parse(numbermetString);
 
                     System.Console.WriteLine();
 
@@ -366,9 +387,9 @@
                         System.Console.WriteLine
                             ("Please Select argument. Wiht Argument[1], Without Armgument[2], Fot exit type[Q or q]: ");
 
-                        NumberArg = System.Console.ReadLine();
+                        numberargString = System.Console.ReadLine();
 
-                        if (NumberArg == "1")
+                        if (numberargString == "1")
                         {
                             System.Console.Clear();
 
@@ -382,13 +403,14 @@
                             do
                             {
                                 
-                                System.Console.Write("Please select the sample. Squarte[1] - Factorial[2] - Quit[Q or q]: ");
+                                System.Console.Write
+                                    ("Please select the sample. Squarte[1] - Factorial[2] - Quit[Q or q]: ");
 
-                                NumberArg = System.Console.ReadLine();
+                                numberargString = System.Console.ReadLine();
 
                                 System.Console.WriteLine();
 
-                                if (NumberArg=="1")
+                                if (numberargString=="1")
                                 {
                                     System.Console.Clear();
                                     
@@ -397,15 +419,17 @@
 
                                     System.Console.WriteLine();
 
-                                    System.Console.Write("Pleaes enter number for SQUARTE: ");
-                                    Number =int.Parse( System.Console.ReadLine());
+                                    System.Console.Write
+                                        ("Pleaes enter number for SQUARTE: ");
+                                    numberInt =int.Parse( System.Console.ReadLine());
 
                                     System.Console.WriteLine();
 
-                                    System.Console.WriteLine("Squarte this number is: "+squarte(Number));
+                                    System.Console.WriteLine
+                                        ("Squarte this number is: "+squarte(numberInt));
                                 }
 
-                                else if (NumberArg=="2")
+                                else if (numberargString=="2")
                                 {
                                     System.Console.Clear();
 
@@ -414,15 +438,17 @@
 
                                     System.Console.WriteLine();
 
-                                    System.Console.Write("Pleaes enter number for FACTORIAL: ");
-                                    Number = int.Parse(System.Console.ReadLine());
+                                    System.Console.Write
+                                        ("Pleaes enter number for FACTORIAL: ");
+                                    numberInt = int.Parse(System.Console.ReadLine());
 
                                     System.Console.WriteLine();
 
-                                    System.Console.WriteLine("Factorial this number is: " + factorial(Number));
+                                    System.Console.WriteLine
+                                        ("Factorial this number is: " + factorial(numberInt));
                                 }
 
-                                else if (NumberArg=="Q"||NumberArg=="q")
+                                else if (numberargString=="Q"||numberargString=="q")
                                 {
                                     break;
                                 }
@@ -430,17 +456,15 @@
                                 else
                                 {
                                     System.Console.Clear();
-                                    System.Console.WriteLine("Please select between the items specified.");
+                                    System.Console.WriteLine
+                                        ("Please select between the items specified.");
                                 }
-
-
+                                
                             } while (true);
-
-
 
                         }
 
-                        else if (NumberArg == "2")
+                        else if (numberargString == "2")
                         {
 
                             System.Console.Clear();
@@ -452,17 +476,18 @@
 
                             System.Console.WriteLine();
 
-                            System.Console.WriteLine("Result SUM: {0}", sum());
+                            System.Console.WriteLine
+                                ("Result SUM: {0}", sum());
 
                             System.Console.WriteLine();
                             System.Console.WriteLine();
 
-                            System.Console.WriteLine("Result POWER: {0}", pow());
-
+                            System.Console.WriteLine
+                                ("Result POWER: {0}", pow());
 
                         }
 
-                        else if (NumberArg == "Q" || NumberArg == "q")
+                        else if (numberargString == "Q" || numberargString == "q")
                         {
                             break;
                         }
@@ -471,15 +496,15 @@
                         {
                             System.Console.Clear();
 
-                            System.Console.WriteLine("Please select between the items specified. ");                            
+                            System.Console.WriteLine
+                                ("Please select between the items specified. ");                            
                         }
 
                     } while (true);
 
-
                 }
 
-                else if (NumberMet == "Q" || NumberMet == "q")
+                else if (numbermetString == "Q" || numbermetString == "q")
                 {
                     break;
                 }
@@ -487,14 +512,16 @@
                 else
                 {
 
-                    System.Console.WriteLine("Please select between the items specified.");
+                    System.Console.WriteLine
+                        ("Please select between the items specified.");
                     System.Console.WriteLine();
 
                 }
 
             } while (true);
 
-            System.Console.WriteLine("Please [ENTER] to exit...!");
+            System.Console.WriteLine
+                ("Please [ENTER] to exit...!");
             System.Console.ReadLine();
         }
     }
